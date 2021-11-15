@@ -1,0 +1,206 @@
+#include <stdio.h>
+#include <stdlib.h>
+////数组03
+//int main()
+//{
+//    int n,i,j,max1=0,max2=0;
+//    printf("输入一个整数n:");
+//    scanf("%d",&n);
+//    int arr[n];
+//    printf("输入%d个数字：",n);
+//     for(i=0;i<=n-1;i++)
+//         scanf("%d",&arr[i]);
+//    for(j=0;j<=n-1;j++)
+//    {
+//        if(max1<=arr[j])
+//        {
+//            if(max1=arr[j])
+//                continue;
+//            else
+//            {
+//                max2=max1;
+//                max1=arr[j];
+//            }
+//        }
+//        else if(max1>arr[j])
+//        {
+//            if(arr[j]>max2)
+//                max2=arr[j];
+//            else
+//                continue;
+//        }
+//
+//    }
+//    printf("max2=%d\n",max2);
+//        return 0;
+//}
+//数组01
+//int main()
+//{
+//    int n,i,j,a=0,b=0,c=0,d=0,e=0,f=0;
+//    printf("输入学生个数n：");
+//    scanf("%d",&n);
+//    int arr[n];
+//    printf("输入%d学生分数：",n);
+//    for(i=0;i<=n-1;i++)
+//    {
+//        scanf("%d",&arr[i]);
+//    }
+//       for(j=0;j<=n-1;j++)
+//       {
+//           if(0<=arr[j]&&arr[j]<=59)
+//                a++;
+//           else if(60<=arr[j]&&arr[j]<=69)
+//                b++;
+//           else if(70<=arr[j]&&arr[j]<=79)
+//                c++;
+//           else if(80<=arr[j]&&arr[j]<=89)
+//                d++;
+//           else if(90<=arr[j]&&arr[j]<=99)
+//                e++;
+//           else
+//                f++;
+//       }
+//       printf("a=%d b=%d c=%d d=%d e=%d f=%d\n",a,b,c,d,e,f);
+//    return 0;
+//}
+
+//数组02
+//int main()
+//{
+//    int n,x,i,j;
+//    printf("输入一个整数n：");
+//    scanf("%d",&n);
+//    int arr[n];
+//    printf("输入%d个整数：",n);
+//    for(i=0;i<=n-1;i++)
+//
+//    {
+//       scanf("%d",&arr[i]);
+//
+//    }
+//
+//       scanf("%d",&x);
+//       for(j=0;j<=n-1;j++)
+//       {
+//
+//        if(arr[j]<=x)
+//            printf("%d ",2*arr[j]);
+//        else
+//            printf("%d ",arr[j]);
+//       }
+//
+//        return 0;
+//}
+
+
+//t4
+//int fib(int n);
+//int main()
+//{
+//    int j,i,m,n;
+//    printf("输入m和n：");
+//    scanf("%d%d",&m,&n);
+//   for(i=m;i<=n;i++)
+//   {    for(j=1;j<=n;j++)
+//           {
+//           if(i==fib(j))
+//           printf("%d\n",i);
+//           }
+//   }
+//    return 0;
+//}
+//int fib(int n)
+//{
+//    int t1=1,t2=0,t3=0,t=0,k=1;
+//    for(k=1;k<=n;k++)
+//    {
+//        t=t1+t2;
+//        t1=t2;
+//        t2=t;
+//    }
+//    return t;
+//
+//
+//
+//
+
+
+//
+//}
+
+//p148第三大题
+//t3
+//int factorsum(int number);
+//int main()
+//{
+//    int i,m,n;
+//    printf("输入m和n的值：");
+//    scanf("%d%d",&m,&n);
+//    for(i=m;i<=n;i++)
+//    {
+//        if(i==factorsum(i))
+//        printf("完数有%d \n",i);
+//    }
+//    return 0;
+//}
+//int factorsum(int number)
+//{
+//     int sum=1,j;
+//     if(number==1)
+//       return 0;
+//    for(j=number-1;j>1;j--)
+//    {
+//
+//       if(number%j==0)
+//          sum+=j;
+//    }
+//    return sum;
+//}
+////t2
+//int fn(int a,int n);
+//int main()
+//{
+//    int sum,a,n,i,b;
+//    scanf("%d%d",&a,&n);
+//    for(i=1;i<=n;i++)
+//    {
+//        b=fn(a,i);
+//        sum+=b;
+//    }
+//       printf("sum=%d\n",sum);
+//
+//    return 0;
+//}
+// int fn(int a,int n)
+// {
+//     int x=0,j;
+//     for(j=0;j<=n-1;j++)
+//     {
+//         x=x+a*pow(10,j);
+//     }
+//     return x;
+// }
+//t1
+//int main()
+//{
+//    int a=0,b=0,c=0,d=0;
+//    char ch;
+//    printf("输入n个字符：");
+//    ch=getchar();
+//    while(ch!='\n')
+//    {
+//        if('a'<=ch&&ch<='z'||'A'<=ch&&'Z'<=ch)
+//             a++;
+//        else if(ch==' ')
+//             b++;
+//        else if('0'<=ch&&ch<='9')
+//             c++;
+//        else
+//             d++;
+//        ch=getchar();
+//    }
+//       printf("a=%d b=%d c=%d d=%d\n",a,b,c,d);
+//
+//    return 0;
+//}
