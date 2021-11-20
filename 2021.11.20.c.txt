@@ -1,0 +1,23 @@
+ 
+// 
+// 
+// //memset函数 memory-内存-set-设置
+// int main()
+// {
+//     char arr[]="hello word";
+//     memset(arr,'*',5);//arr-需要更改的数组，‘*’-将被更改为‘*’，5-前五个字符被更改为‘*’；
+//     printf("%s\n",arr);
+//     return 0;
+// }
+
+
+
+// //字符串函数strcpy-字符串拷贝
+// int main()
+// {
+//     char arr1[]="chenjialiowaimni";
+//     char arr2[20]="#####";
+//     strcpy(arr2,arr1);//arr2为拷贝目的地，arr1为拷贝源头，将arr1中的字符串拷贝到arr2中。
+//     printf("%s\n",arr2);//拷贝时\0也被拷贝过去了,遇到0就是结束标志’
+//     return 0;
+// }
