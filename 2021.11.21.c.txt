@@ -1,0 +1,109 @@
+
+////数组04
+//int main()
+//{
+//    int m,n,i,j,number,ix,jx;
+//    printf("输入行数m和列数n：");
+//    scanf("%d%d",&m,&n);
+//    printf("输入%d*%d个整数：",m,n);
+//    int arr[m][n];
+//    for(i=0;i<=m-1;i++)
+//    {
+//        for(j=0;j<=n-1;j++)
+//        {
+//            scanf("%d",&arr[i][j]);
+//        }
+//    }
+//    int max=arr[0][0];
+//    for(i=0;i<=m-1;i++)
+//    {
+//        for(j=0;j<=n-1;j++)
+//            {
+//                if(arr[i][j]>=max)
+//                {
+//                    max=arr[i][j];
+//                    ix=i;
+//                    jx=j;
+//
+//                }
+//
+//            }
+//    }
+//    printf("max=%d %d %d\n",max,ix,jx);
+//    return 0;
+//}
+//
+////循环结构题目03
+//int main()
+//{
+//    int i,j,n;
+//    double sum=1.0,sum1=1.0;
+//    printf("输入数字n：");
+//    scanf("%d",&n);
+//    for(i=1;i<=n;i++)
+//    {
+//         sum1=1;
+//        for(j=1;j<=i;j++)
+//        {
+//          sum1*=(1.0/j);
+//        }
+//        sum+=sum1;
+//    }
+//    printf("sum=%.5lf\n",sum);
+//    return 0;
+//}
+
+
+//
+////循环结构题目01
+//int main()
+//{
+//    int n,j,i;
+//    printf("请输入一个数字n：");
+//    scanf("%d",&n);
+//    for(i=1;i<=n;i++)
+//    {
+//        for(j=1;j<=i;j++)
+//        {
+//            printf("%d ",j);
+//        }
+//        printf("%c",'\n');
+//    }
+//    return 0;
+//}
+
+//
+//
+////循环结构02
+//int main()
+//{
+//    int n,i,max=0,min=100,number,sum=0;
+//    double average=0;
+//    printf("输入学生人数：");
+//    scanf("%d",&n);
+//    printf("输入%d个学生分数：",n);
+//    for(i=1;i<=n;i++)
+//    {
+//        scanf("%d",&number);
+//        sum+=number;
+//        if(number>max)
+//          max=number;
+//        if(number<min)
+//          min=number;
+//    }
+//    average=sum*1.0/n;
+//    printf("average=%.2lf max=%d min=%d\n",average,max,min);
+//    return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
