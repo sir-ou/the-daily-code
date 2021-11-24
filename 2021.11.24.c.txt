@@ -1,0 +1,134 @@
+
+// //打印爱心！！！！！！！！！！！！！！！！！！！！！！
+// int main()
+// {
+//     float a,x,y;
+//     for(y=1.5f;y>-1.5f;y-=0.1f)
+//     {
+//         for(x=-1.5f;x<1.5f;x+=0.05f)
+//         {
+//             a=x*x+y*y-1;
+//             char ch=a*a*a-x*x*y*y*y<=0.0f?'@':' ';
+//             putchar(ch);
+//         }
+//         Sleep(100);
+//     }
+//     printf("\n");
+//
+//
+//
+//     return 0;
+// }
+
+// //重要知识！！！！！！！！！！！！！！！！！！！！
+// //函数的递归
+// //1.输入一个整数，按照位数一个一个打印出来。例1234 -1 2 3 4
+// void print(int i)
+// {
+//     if(i>9)
+//     {
+//
+//      print(i/10);
+//     }
+//     printf("%d ",i%10);
+//
+// }
+// int main()
+// {
+//     unsigned int n=0;
+//     scanf("%d",&n);
+//     print(n);
+//     //print(1234)
+//     //print(123) 4
+//     //print(12) 3 4
+//     //print(1) 2 3 4
+//          return 0;
+// }
+
+
+////2.统计字符串长度，不允许创建临时变量
+////方法一，创建临时变量，不用递归。
+//int my_strlen(char* str)
+//{
+//    int sum=0;
+//    while(*str!=0)
+//    {
+//        sum++;
+//        str++;
+//    }
+//    return sum;
+//
+//
+//}
+//int main()
+//{
+//    char arr[]="bit";//b i t \0
+//    int len=my_strlen(arr);//传数组，传过去的是第一个元素的地址,数组的元素地址从第一个元素开始逐渐加1
+//    printf("len=%d\n",len);
+//    return 0;
+//}
+////方法2，递归法
+////大事化小
+////my_strlen"bit";
+////1+my_strlen"it"
+////1+1+my_strlen"t"
+////1+1+1+my_strlen" "
+////1+1+1+0
+////3
+//my_strlen(char* str)
+//{
+//    if(*str!='\0')
+//       return 1+my_strlen(str+1);
+//    else
+//       return 0;
+//
+//}
+//int main()
+//{
+//    char arr[]="bit";//b i t \0
+//    int len=my_strlen(arr);//传数组，传过去的是第一个元素的地址,数组的元素地址从第一个元素开始逐渐加1
+//    printf("len=%d\n",len);
+//    return 0;
+//}
+////递归与迭代
+////迭代-重复的做一件事情，类似于循环
+////3.求n的阶乘，不考虑溢出
+////方法一，正常循环。
+//int Facl(int n)
+//{
+//    int i=0;
+//    int ret=1;
+//    for(i=1;i<=n;i++)
+//    {
+//        ret*=i;
+//    }
+//    return ret;
+//}
+//int main()
+//{
+//    int n;
+//    int ret;
+//    scanf("%d",&n);
+//    ret=Facl(n);
+//    printf("ret=%d\n",ret);
+//    return 0;
+//}
+//
+////方法2，递归
+//int Fac2(int n)
+//{
+//    if(n<=1)
+//        return 1;
+//    else
+//        return n*Fac2(n-1);
+//}
+//int main()
+//{
+//    int n;
+//    int ret;
+//    scanf("%d",&n);
+//    ret=Fac2(n);
+//    printf("ret=%d\n",ret);
+//    return 0;
+//}
+
