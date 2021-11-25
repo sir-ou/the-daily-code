@@ -1,0 +1,86 @@
+//数组知识
+//strlen 和 sizeof
+//strlen 只是求字符串的长度，没有别的作用-库函数-引头文件
+//sizeof 是计算变量、数组、类型的大小，单位是字节-是操作符
+
+
+// //重要知识！！！！！！！！！！！！！！！！！！！！
+// //函数的递归
+////递归经典例题-汉诺塔问题
+//int count=0;
+//void move(int n,char a,char b,char c)
+//{
+//    if(n==1)
+//        printf("第%d次：%c->%c\n",++count,a,c);
+//    else
+//    {
+//        move(n-1,a,c,b);
+//        printf("第%d次：%c->%c\n",++count,a,c);
+//        move(n-1,b,a,c);
+//
+//    }
+//
+//}
+//
+//int main()
+//{
+//    int n=0;
+//    printf("请输入铁饼数量：");
+//    scanf("%d",&n);
+//    move(n,'a','b','c');
+//    printf("一共移动了%d次\n",count);
+//
+//    return 0;
+//}
+
+////4.方法1，输出第n个斐波那契数列，递归法效率低，计算太多次
+////1 1 2 3 5 8 13 21 34 55 ..........
+//int count=0;
+//int Fib(int n)
+//{
+//    if(n==3)
+//        count++;//测试第三个斐波那契数次数
+//    if(n<=2)
+//        return 1;
+//    else
+//        return (Fib(n-1)+Fib(n-2));
+//}
+//int main()
+//{
+//    int n=0;
+//    int ret=0;
+//    scanf("%d",&n);
+//    ret=Fib(n);
+//    printf("ret=%d\n",ret);
+//    printf("count=%d\n",count);
+//    return 0;
+//}
+////50
+////49 48
+////48 47 47 46
+////47 46 46 45 46 45 45 44
+////.....................................
+
+////方法2，循环
+//int Fib(int n)
+//{
+//    int a=1;
+//    int b=1;
+//    int c=0;
+//    while(n>2)
+//    {
+//        c=a+b;
+//        a=b;
+//        b=c;
+//        n--;
+//    }
+//}
+//int main()
+//{
+//    int n=0;
+//    int ret=0;
+//    scanf("%d",&n);
+//    ret=Fib(n);
+//    printf("ret=%d\n",ret);
+//    return 0;
+//}
