@@ -1,0 +1,111 @@
+////数组知识
+////strlen 和 sizeof
+////strlen 只是求字符串的长度，\0之前的字符长度，没有别的作用-库函数-引头文件
+////sizeof 是计算变量、数组、类型的大小，单位是字节-是操作符
+//三子棋游戏！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+void menu()
+{
+    printf("****************************\n");
+    printf("***** 1. play  0. exit*****\n");
+    printf("****************************\n");
+}
+//整个游戏的算法实现
+void game()
+{
+    //数组-存放走出的棋盘信息
+    char board[row][col]={0};
+    //初始化棋盘
+    initboard(board,row,col);//给数组初始化全为空格
+    //打印棋盘
+    displayboard(board,row,col);
+
+
+}
+void test()
+{
+    int input=0;
+    do
+    {
+        menu();
+        printf("请选择->");
+        scanf("%d",&input);
+        switch(input)
+        {
+        case 1:
+            game();
+            break;
+        case 0:
+            printf("退出游戏\n");
+            break;
+        default:
+            printf("输入错误，请重新选择\n");
+        }
+
+    }while(input);
+}
+int main()
+{
+    test();
+    return 0;
+}
+
+
+
+//
+////冒泡排序
+//
+//void bubble_sort(int arr[],int sz)
+//{
+//    //确定冒泡排序的趟数
+//    int i=0;
+//    for(i=0;i<sz-1;i++)
+//    {
+ //         int flag=1;
+//        int j=0;
+//        for(j=0;j<sz-i-1;j++)
+//        {
+//            //每一趟冒泡排序
+//            if(arr[j]>arr[j+1])
+//            {
+//                int tem=arr[j];
+//                arr[j]=arr[j+1];
+//                arr[j+1]=tem;
+//                flag=0;
+//            }
+//        }
+//        if(flag==1)
+//            break;
+//
+//    }
+//}#include "game.h"
+ int add(int x,int y)
+ {
+     int z=x+y;
+     return z;
+ }
+
+void initboard(char board,int cow,int col)
+{
+    int i=0;
+    int j=0;
+    for(i=0;j<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            board[i][j]=' ';
+        }
+    }
+}
+
+void display(char board,int row,int col)
+{
+    int i=0;
+    for(i=0;i<row;i++)
+    {
+        //1.打印一行数据
+        printf(" %c | %c | %c \n");
+        //打印分割行
+        printf("---|---|---\n");
+
+    }
+}
