@@ -1,0 +1,548 @@
+
+//问题A，顺序结构01
+int main()
+{
+    char ch=getchar();
+    printf("%c\n",ch-32);
+    return 0;
+}
+//问题B顺序结构02
+int main()
+{
+    int m,n,sum,sub;
+    scanf("%d%d",&m,&n);
+    sum=m+n;
+    sub=m-n;
+    printf("sum=%d\n",sum);
+    printf("sub=%d\n",sub);
+    return 0;
+}
+//问题C顺序结构03
+int main()
+{
+    double r,s,c;
+    scanf("%lf",&r);
+    s=3.141592*r*r;
+    c=2*3.141592*r;
+    printf("%.2lf %.2lf %.2lf\n",r,s,c);
+    return 0;
+}
+//问题D顺序结构04
+int main()
+{
+    int a,b,c,d;
+    double average;
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+    average=(a+b+c+d)/4.0;
+    printf("average=%.2lf\n",average);
+    return 0;
+}
+//问题E选择结构01
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    if(num%2==1)
+        printf("ODD\n");
+    else
+        printf("EVEN\n");
+    return 0;
+}
+//问题F选择结构02
+int main()
+{
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
+    if(a+b>c&&a+c>b&&b+c>a)
+        printf("YES\n");
+    else
+        printf("NO\n");
+    return 0;
+}
+//问题G选择结构03
+int main()
+{
+    double a;
+    scanf("%lf",&a);
+    if(a<300)
+        printf("1.00 %.2lf",a);
+    else if(300<=a&&a<=500)
+        printf("0.90 %.2lf",a*0.90);
+    else if(500<a&&a<800)
+        printf("0.70 %.2lf",a*0.70);
+    else
+        printf("0.50 %.2lf",a*0.50);
+    return 0;
+}
+//问题H选择结构04
+int main()
+{
+    int a,b,c,t;
+    scanf("%d %d %d",&a,&b,&c);
+    if(a<b)
+    {   t=a;
+        a=b;
+        b=t;
+    }
+    if(a<c)
+    {
+        t=c;
+        c=a;
+        a=t;
+    }
+    if(b<c)
+    {
+        t=c;
+        c=b;
+        b=t;
+    }
+    printf("%d %d %d\n",a,b,c);
+    return 0;
+}
+//问题I选择结构05
+ int main()
+ {
+     int n;
+     scanf("%d",&n);
+     if(n%2==0)
+        printf("能被2整除 ");
+     if (n%3==0)
+        printf("能被3整除 ");
+     if(n%5==0)
+        printf("能被5整除 ");
+     return 0;
+ }
+//问题J选择结构06
+int main()
+{
+    int year,month;
+    scanf("%d %d",&year,&month);
+    if((year%4==0&&year%100!=0)||(year%400==0))
+    {
+        switch(month)
+        {
+        case 1: case 3: case 5:case 7:case 8:case 10:case 12: printf("31");break;
+
+        case 2: printf("29");break;
+
+        case 4:case 6: case 9:case 11: printf("30");break;
+        }
+    }else
+    {
+        switch(month)
+        {
+        case 1: case 3: case 5:case 7:case 8:case 10:case 12: printf("31");break;
+
+        case 2: printf("28");break;
+
+        case 4:case 6: case 9:case 11: printf("30");break;
+        }
+
+    }
+
+    return 0;
+}
+
+//
+////问题K循环结构题目01
+//int main()
+//{
+//    int n,j,i;
+//    printf("请输入一个数字n：");
+//    scanf("%d",&n);
+//    for(i=1;i<=n;i++)
+//    {
+//        for(j=1;j<=i;j++)
+//        {
+//            printf("%d ",j);
+//        }
+//        printf("%c",'\n');
+//    }
+//    return 0;
+//}
+//问题L循环结构02
+int main()
+{
+    int n,i,max=0,min=100,number,sum=0;
+    double average=0;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {   scanf("%d",&number);
+        sum+=number;
+        if(number>max)
+          max=number;
+        if(number<min)
+          min=number;
+    }
+    average=sum*1.0/n;
+    printf("%d\n%d\n%.2lf\n",max,min,average);
+    return 0;
+}
+//问题M循环结构题目03
+int main()
+{
+    int i,j,n;
+    double sum=1.0,sum1=1.0;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+         sum1=1;
+        for(j=1;j<=i;j++)
+        {
+          sum1*=(1.0/j);
+        }
+        sum+=sum1;
+    }
+    printf("%.5lf\n",sum);
+    return 0;
+}
+//问题N循环结构题目04
+int main()
+{
+    double e,sum=0,num=0;
+    int i=1;
+    scanf("%lf",&e);
+    do
+    {  num=1.0/i*pow(-1,i+1);
+       sum=num+sum;
+        ++i;
+    }while(fabs(num)>e);
+    printf("%.4lf\n",sum);
+    return 0;
+}
+//循环O循环结构05
+int main()
+{
+    int i,n,m,j,k;
+    scanf("%d%d",&m,&n);
+    for(i=n;i>0;i--)
+
+    {
+        for(j=i-1;j>0;j--)
+        {
+            printf("%c",' ');
+        }
+        for(k=1;k<=m;k++)
+        {
+            printf("%c",'*');
+        }
+            printf("\n");
+    }
+
+    return 0;
+}
+//问题P数组01
+int main()
+{
+    int n,i,j,a=0,b=0,c=0,d=0,e=0,f=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<=n-1;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+       for(j=0;j<=n-1;j++)
+       {
+           if(0<=arr[j]&&arr[j]<=59)
+                a++;
+           else if(60<=arr[j]&&arr[j]<=69)
+                b++;
+           else if(70<=arr[j]&&arr[j]<=79)
+                c++;
+           else if(80<=arr[j]&&arr[j]<=89)
+                d++;
+           else if(90<=arr[j]&&arr[j]<=99)
+                e++;
+           else
+                f++;
+       }
+       printf("%d %d %d %d %d %d\n",a,b,c,d,e,f);
+    return 0;
+}
+ //问题Q数组02
+int main()
+{
+    int n,x,i,j;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<=n-1;i++)
+    {
+       scanf("%d",&arr[i]);
+    }
+       scanf("%d",&x);
+       for(j=0;j<=n-1;j++)
+       {
+        if(arr[j]<=x)
+            printf("%d ",2*arr[j]);
+        else
+            printf("%d ",arr[j]);
+       }
+        return 0;
+}
+//问题R数组03
+int main()
+{
+    int n,i,j,max1=0,max2=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<=n-1;i++)
+         scanf("%d",&arr[i]);
+    for(j=0;j<=n-1;j++)
+    {
+        if(max1<=arr[j])
+        {
+            if(max1==arr[j])
+                continue;
+            else
+            {
+                max2=max1;
+                max1=arr[j];
+            }
+        }
+        else if(max1>arr[j])
+        {
+            if(arr[j]>max2)
+                max2=arr[j];
+            else
+                continue;
+        }
+
+    }
+    printf("%d\n",max2);
+    return 0;
+}
+//问题S数组04
+int main()
+{
+    int m,n,i,j,number,ix,jx;
+    scanf("%d%d",&m,&n);
+    int arr[m][n];
+    for(i=0;i<=m-1;i++)
+    {
+        for(j=0;j<=n-1;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int max=arr[0][0];
+    for(i=0;i<=m-1;i++)
+    {
+        for(j=0;j<=n-1;j++)
+            {
+                if(arr[i][j]>=max)
+                {
+                    max=arr[i][j];
+                    ix=i;
+                    jx=j;
+                }
+            }
+    }
+    printf("%d %d %d\n",max,ix,jx);
+    return 0;
+}
+//问题T数组05
+int main()
+{
+    int n,j,i,sum=0;
+    scanf("%d",&n);
+    int arr[n][n];
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+           scanf("%d",&arr[i][j]);
+    if(n%2==0)
+      for(i=0;i<n;i++)
+        sum+=(arr[i][i]+arr[n-1-i][i]);
+    else
+    {
+        for(i=0;i<n;i++)
+            sum+=(arr[i][i]+arr[n-1-i][i]);
+        sum=sum-arr[n/2][n/2];
+    }
+    printf("%d\n",sum);
+    return 0;
+}
+//问题U数组06
+int main()
+{
+    int n,m,i,j;
+    scanf("%d",&m);
+    int a[m];
+    for(i=0;i<m;i++)
+        scanf("%d",&a[i]);
+    scanf("%d",&n);
+    int b[n];
+    for(j=0;j<n;j++)
+       scanf("%d",&b[j]);
+    int c[m+n];
+    for(i=0;i<m;i++)
+        c[i]=a[i];
+    i=0;
+    for(j=m;j<m+n;j++)
+    {
+        c[j]=b[i];
+        i++;
+    }
+    for(i=0;i<m+n;i++)
+        printf("%d ",c[i]);
+    return 0;
+}
+//问题V函数01
+int isPrime(int num)
+{
+    int j=0;
+    if(num==1)
+        return 0;
+    for(j=2;j<=sqrt(num);j++)
+    {
+        if(num%j==0)
+            return 0;
+    }
+    return 1;
+}
+int main()
+{
+    int m,n,i;
+    scanf("%d%d",&m,&n);
+    for(i=m;i<=n;i++)
+    {
+        if(isPrime(i)==1)
+            printf("%d ",i);
+    }
+
+    return 0;
+}
+//问题W函数02
+int reverse(int num)
+{
+    int count=0;
+    while(num!=0)
+    {
+        count=count*10+num%10;
+        num/=10;
+    }
+    return count;
+}
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    for(i=0;i<n;i++)
+       printf("%d ",reverse(arr[i]));
+    return 0;
+}
+//问题X函数03
+void sortlnc(int* array,int len)
+{
+    int i=0,j=0;
+    for(i=0;i<len-1;i++)
+    {
+        int flag=1;
+        for(j=0;j<len-i-1;j++)
+        {
+            if(array[j]>array[j+1])
+               {
+                 int tem=array[j];
+                 array[j]=array[j+1];
+                 array[j+1]=tem;
+                 flag=0;
+               }
+        }
+         if(flag==1)
+             break;
+    }
+    for(i=0;i<len;i++)
+        printf("%d ",array[i]);
+}
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    int array[n];
+    for(i=0;i<n;i++)
+      scanf("%d",&array[i]);
+    sortlnc(array,n);
+    return 0;
+}
+//问题Y函数04
+double distence(int x1,int y1,int x2,int y2)
+{
+    double and;
+    and=sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+    return and;
+}
+int main()
+{
+    int n,i;
+    double sum=0.0;
+    scanf("%d",&n);
+    int arr[2*n];
+    for(i=0;i<2*n;i++)
+        scanf("%d",&arr[i]);
+    for(i=0;i<n;i+=2)
+        sum=sum+distence(arr[i],arr[i+1],arr[i+2],arr[i+3]);
+    printf("%.2lf",sum);
+    return 0;
+}
+//问题Z指针01
+void myMove(int*p,int len)
+{
+    int i=0,j=0;
+    for(i=0;i<len-1;i++)
+    {
+        int flag=1;
+        for(j=0;j<len-i-1;j++)
+        {
+            if(p[j]==0)
+               {
+                 int tem=p[j];
+                 p[j]=p[j+1];
+                 p[j+1]=tem;
+                 flag=0;
+               }
+        }
+         if(flag==1)
+             break;
+    }
+    for(i=0;i<len;i++)
+        printf("%d ",p[i]);
+}
+int main()
+{
+    int n,i=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    myMove(arr,n);
+    return 0;
+}
+//问题a指针02
+void mySum(int*p,int len,int*sumOdd,int*sumEven)
+{
+    int i=0;
+    for(i=0;i<len;i++)
+    {
+        if(p[i]%2==1)
+            *sumEven+=p[i];
+        else
+            *sumOdd+=p[i];
+    }
+    printf("%d %d",*sumEven,*sumOdd);
+}
+int main()
+{
+    int n,sumodd=0,sumeven=0,i;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+       scanf("%d",&arr[i]);
+    mySum(arr,n,&sumodd,&sumeven);
+    return 0;
+}
+
+
+
+
