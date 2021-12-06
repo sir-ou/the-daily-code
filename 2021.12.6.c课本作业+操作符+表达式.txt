@@ -1,0 +1,190 @@
+// 表达式详解！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
+////隐式类型转换
+//int main()
+//{
+//    char a=3;
+//    //整形四个字节补码00000000000000000000000000000011
+//    //变为char，一个字节，从右往左截断00000011——a
+//    char b=127;
+//    //000000000000000000000000000000001111111
+//    //01111111——b
+//    char c=a+b;//a和b如何相加，进行整形提升，提升为普通整形，从符号位左边开始提升，并且补的数为符号位数
+////a——00000011——提升后0000000000000000000000000011
+////b——01111111——提升后0000000000000000000001111111
+////                 c=0000000000000000000010000010
+////c被截断后补码10000010
+////由于打印的类型为整形，四个字节，所以c要整形提升——11111111111111111111111110000010-补码
+////                                                 11111111111111111111111110000001-反码
+////                                                 10000000000000000000000001111110-原码-  -126
+//    printf("%d\n",c);
+//}
+// //操作符详解！！！！！！！！！！！！！！！！！！！！！！！！
+
+// .操作符和->操作符
+//描述一个学生
+//创建一个结构体类型-struct stu
+//    struct stu
+//    {
+////        成员变量
+//        char name[20];
+//        char id[20];
+//        int age;
+//    };
+//int main()
+//{
+//    //使用struct stu 类型创建了一个学生对象s1，并且初始化
+//    struct stu s1={"zhangsan","2106410221",20};//姓名 学号 年龄 ，按照所给的结构顺序依次初始化
+//    struct stu* ps=&s1;
+//    printf("%s\n",ps->name);
+//    printf("%d\n",ps->age);
+//    printf("%s\n",ps->id);
+//    结构体指针->成员变量；
+//    printf("%s\n",(*ps).name);
+//    printf("%s\n",s1.name);
+//    printf("%d\n",s1.age);
+//    printf("%s\n",s1.id);
+////  结构体变量 . 成员变量
+//    return 0;
+//}
+
+//逗号表达式，从左向右依次执行，整个表达式的结果是最后一个表达式结果的值
+//int main()
+//{
+//    int a=1;
+//    int b=2;
+//    int c=(a>b,a=b+10,a,b=a+1);//逗号表达式
+//    printf("%d",c);
+//    //c是多少？
+//    return 0;
+//}
+
+//条件操作符
+//int main()
+//{
+////    用三目操作符来修改
+////    int a=0;
+////    int b=0;
+////    if(a>5)
+////        b=3;
+////    else
+////        b=9;
+//    b=(a>5?3:9);
+//    return 0;
+//}
+
+////一道360笔试题
+//int main()
+//{
+//    int i=0,a=0,b=2,c=3,d=4;
+////    i=a++&&++b&&d++;//a++确定是零了之后，左边假，右边不算了，&&之后的值通通不再运算，所以输出1 2 3 4
+//    i=a++||++b||d++;//左边真，右边就不再运算了
+//    printf(" a=%d\n b=%d\n c=%d\n d=%d\n",a,b,c,d);
+//    return 0;
+//}//程序输出的结果是什么？
+
+//p216
+////t6删除字符
+//void delchar(char s[],char c)
+//{
+//
+//   	int i,j;
+//	for(i=j=0;s[i]!='\0';i++)
+//		if(s[i]!=c)
+//			s[j++]=s[i];
+//	s[j]='\0';
+//}
+//int main()
+//{
+//    char s[100],ch;
+//    gets(s);
+//    ch=getchar();
+//    delchar(s,ch);
+//    puts(s);
+//    return 0;
+//}
+//#include <stdio.h>
+//int main()
+//{
+//	char a,str[100];
+//	void delete_me(char str[],char ch);
+//	printf("请输入字符串\n");
+//	gets(str);
+//	printf("请输入想删除的字符\n");
+//	scanf("%c",&a);
+//	delete_me(str,a);
+//	printf("删除后字符串为：\n");
+//	printf("%s\n",str);
+//	return 0;
+//}
+//
+//void delete_me(char str[],char ch)
+//{
+//	int i,j;
+//	for(i=j=0;str[i]!='\0';i++)
+//		if(str[i]!=ch)
+//			str[j++]=str[i];
+//
+//	str[j]='\0';
+//}
+//t3循环后移
+//void move(int* arr,int n,int m)
+//{
+//    int i=0,j=m;
+//    for(i=0;i<m;i++)
+//    {
+//        int tem=arr[i];
+//        arr[i]=arr[n-j];
+//        arr[n-j]=tem;
+//        j--;
+//    }
+//    for(j=0;j<=m;j++)
+//    {
+//
+//      for(i=m;i<=n-m;i++)//1 2 3 4 5 6 7  2     6 7 3 4 5 1 2
+//      {
+//        int num=arr[i];
+//        arr[i]=arr[i+1];
+//        arr[i+1]=num;
+//       }
+//    }
+//}
+//int main()
+//{
+//    int n,i,j,m;
+//    scanf("%d",&n);
+//    int arr[n];
+//    for(i=0;i<n;i++)
+//        scanf("%d",&arr[i]);
+//    scanf("%d",&m);
+//    move(arr,n,m);
+//    for(i=0;i<n;i++)
+//        printf("%d ",arr[i]);
+//    return 0;
+//}
+////t2
+//int search(int list[],int n,int x)
+//{
+//    int i=0;
+//    for(i=0;i<n;i++)
+//        if(list[i]==x)
+//            return i;
+//    if(i==n)
+//        return -1;
+//}
+//int main()
+//{
+//    int n,x,i;
+//    scanf("%d",&n);
+//    int list[n];
+//    for(i=0;i<n;i++)
+//          scanf("%d",&list[i]);
+//    scanf("%d",&x);
+//    int num=search(list,n,x);
+//    num==-1?printf("Not found"):printf("%d\n",num);
+////    if(num==-1)
+////        printf("Not found");
+////    else
+////        printf("%d\n",num);
+//    return 0;
+//}
