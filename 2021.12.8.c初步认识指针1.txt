@@ -1,0 +1,92 @@
+//知识点4 指针运算
+////1.指针+-整数
+//int main()
+//{
+//    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+//    int* p=arr;
+//    int sz=sizeof(arr)/sizeof(arr[0]);
+//    int i=0;
+//    for(i=0;i<sz;i++)
+//    {
+//        printf("%d ",*p);
+//        p=p+1;//p+整数
+//    }
+//    return 0;
+//}
+
+////2.指针+-指针
+//int main()
+//{
+//    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+//    printf("%d \n",&arr[9]-&arr[0]);//得到两个地址之间的元素个数9
+//    return 0;
+//}
+
+//int my_strlen(char* str)
+//{
+//    char* start=str;
+//    char* end=str;
+//    while(*end!='\0')
+//        end++;
+//    return end-start;
+//}
+//int main()
+//{
+//    //strlen-求字符串长度
+//    //递归-模拟实现了strlen-计数器的方式1-递归的方式2
+//    char arr[]="bit";
+//    int len=my_strlen(arr);
+//    printf("%d\n",len);
+//    return 0;
+//}
+
+////3.指针的关系运算
+//#define num 5
+//int main()
+//{
+//    int arr[num];
+//    int* vp;
+////    方法一
+//    for(vp=&arr[num];vp>&arr[0];)
+//    {
+//        *--vp=0;//推荐使用方法一，方法二可能出现bug
+//    }
+////    方法二
+//    for(vp=&arr[num-1];vp>=&arr[0];vp--)
+//    {
+//        *vp=0;
+//    }
+//}
+//知识点3 野指针：野指针就是指针指向的位置是不可能的（随机的、不正确的、没有明确限制的）
+//野指针成因
+//1.指针未初始化
+//int main()
+//{
+//    int* p;//局部变量指针未初始化，默认为随机值
+//    *p=20;
+//    return 0;
+//}
+
+////2.指针越界访问
+//int main()
+//{
+//    int arr[]={0};
+//    int i=0;
+//    int* p=arr;
+//    for(i=0;i<11;i++) //p加到10时超出了我的数组范围，所以也是野指针
+//        p++;
+//    return 0;
+//}
+
+////3.指针指向的空间释放
+//int* test()
+//{
+//    int a=10;
+//    return &a;
+//}
+//int main()
+//{
+//    int* p=test();
+//    *p=20;
+//    return 0;
+//}
