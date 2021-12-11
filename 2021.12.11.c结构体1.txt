@@ -1,0 +1,88 @@
+ //结构体详解！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+ //描述一个学生 姓名 年龄 电话 性别
+ //struct-结构体关键字  stu-结构体标签  struct stu -结构体类型
+ //写法一
+// struct stu
+// {
+//     //成员变量
+//     char name[20];
+//     short age;
+//     char tele[12];
+//     char sex[5];
+// }s1,s2,s3;//s1 s2 s3 是三个结构体全局变量
+// int main()
+// {
+//     struct stu s;//s是局部结构体变量
+//     return 0;
+// }
+//写法二
+// typedef struct Stu
+// {
+//     //成员变量
+//     char name[20];
+//     short age;
+//     char tele[12];
+//     char sex[5];
+// }Stu;// typedef 作用下 将struct stu 改名为 stu
+// int main()
+// {
+//     struct Stu s={"张三",18,"18300947401","男"};//s是局部结构体变量;
+//     Stu s1={"旺财",22222,"030417","保密"};//初始化
+//     return 0;
+// }
+////写法三
+//struct S
+//{
+//    int a;
+//    char c;
+//    char arr[20];
+//    double d;
+//};
+//struct T
+//{
+//    char ch[10];
+//    struct S s;
+//    char* pc;
+//};
+//int main()
+//{
+//    char arr[]="hello bit\n";
+//    struct T t={"hello bit",{21,'w',"hello bit",3.14},arr};//嵌套初始化
+//    printf("%s\n",t.ch);
+//    printf("%s\n",t.s.arr);
+//    printf("%lf\n",t.s.d);
+//    printf("%s\n",t.pc);
+//    return 0;
+//}
+////知识点2 结构体传参
+// typedef struct Stu
+// {
+//     char name[20];
+//     short age;
+//     char tele[12];
+//     char sex[5];
+// }Stu;
+// void printf1(Stu tmp)
+// {
+//     printf("mane:%s\n",tmp.name);
+//     printf("age:%d\n",tmp.age);
+//     printf("tele:%s\n",tmp.tele);
+//     printf("sex:%s\n",tmp.sex);
+// }
+// void printf2(Stu* ps)
+// {
+//     printf("mane:%s\n",ps->name);
+//     printf("age:%d\n",ps->age);
+//     printf("tele:%s\n",ps->tele);
+//     printf("sex:%s\n",ps->sex);
+// }
+// int main()
+// {
+//     Stu s={"张三",18,"18300947401","男"};
+//     //打印结构体数据 两种方法 哪种好？
+//     //printf1 还是 printf2 ?      
+//     //printf2 更好， 因为printf1 中 需要临时拷贝一份数据传输过去，效率低，占内存   
+//     printf1(s);
+//     printf2(&s);
+//     return 0;
+// }
