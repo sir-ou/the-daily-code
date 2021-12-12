@@ -1,0 +1,154 @@
+////p234
+////t5通讯录排序
+//typedef struct birthday
+//{
+//    int year;
+//    int month;
+//    int day;
+//}birthday;
+//typedef struct address
+//{
+//    char name[20];
+//    birthday sr;
+//    char tele[20];
+//}Thl;
+//void swap(Thl thl[],int n)
+//{
+//    int j=0,i=0;
+//    for(j=0;j<n-1;j++)
+//    {
+//        if(thl[j].sr.year>thl[j+1].sr.year)
+//        {
+//            Thl tmp=thl[j];
+//            thl[j]=thl[j+1];
+//            thl[j+1]=tmp;
+//        }
+//        if(thl[j].sr.year==thl[j+1].sr.year)
+//        {
+//            for(i=0;i<n-1;i++)
+//            {
+//                if(thl[j].sr.month>thl[j+1].sr.month)
+//                {
+//                    Thl tm=thl[j];
+//                    thl[j]=thl[j+1];
+//                    thl[j+1]=tm;
+//                }
+//                if(thl[j].sr.month==thl[j+1].sr.month)
+//                {
+//                    for(i=0;i<n-1;i++)
+//                    {
+//                        if(thl[j].sr.day>thl[j+1].sr.day)
+//                        {
+//                             Thl t=thl[j];
+//                             thl[j]=thl[j+1];
+//                             thl[j+1]=t;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+//int main()
+//{
+//    int n,i;
+//    scanf("%d",&n);
+//    Thl thl[n];
+//    getchar();
+//    for(i=0;i<n;i++)
+//    {
+//        gets(thl[i].name);
+//        scanf("%d%d%d",&thl[i].sr.year,&thl[i].sr.month,&thl[i].sr.day);
+//        getchar();
+//        gets(thl[i].tele);
+//    }
+//    swap(thl,n);
+//    for(i=0;i<n;i++)
+//       printf(" %s  %d.%d.%d  %s\n",thl[i].name,thl[i].sr.year,thl[i].sr.month,thl[i].sr.day,thl[i].tele);
+//    return 0;
+//}
+//////t4查找书籍
+//typedef struct book
+//{
+//    char name[30];
+//    int price;
+//}book;
+//int main()
+//{
+//    book arr[3];
+//    int i=0;
+//    for(i=0;i<3;i++)
+//    {
+//        gets(arr[i].name);
+//        scanf("%d",&arr[i].price);
+//        getchar();
+//    }
+//    int max=arr[0].price;
+//    char max_name[20];
+//    int min=arr[0].price;
+//    char min_name[20];
+//    strcpy(max_name,arr[0].name);
+//    strcpy(min_name,arr[0].name);
+//    for(i=0;i<3;i++)
+//    {
+//        if(arr[i].price>max)
+//            {
+//                max=arr[i].price;
+//                strcpy(max_name,arr[i].name);
+//            }
+//    }
+//    for(i=0;i<3;i++)
+//    {
+//         if(arr[i].price<min)
+//        {
+//            min=arr[i].price;
+//            strcpy(min_name,arr[i].name);
+//        }
+//    }
+//    printf("%s %d\n",max_name,max);
+//    printf("%s %d\n",min_name,min);
+//    return 0;
+//}
+////t2计算两个复数之积
+//struct two
+//{
+//    int a;
+//    int b;
+//};
+//int main()
+//{
+//    struct two two1;
+//    struct two two2;
+//    scanf("(%d+%di)*(%d+%di)",&two1.a,&two1.b,&two2.a,&two2.b);
+//    printf("%d+%di\n",(two1.a*two2.a-two2.b*two1.b),(two1.a*two2.b+two2.a*two1.b));
+//    return 0;
+//}
+////t1时间换算
+//struct time
+//{
+//    int h;
+//    int m;
+//    int s;
+//};
+//int main()
+//{
+//    struct time mytime;
+//    int n;
+//    scanf("%d:%d:%d",&mytime.h,&mytime.m,&mytime.s);
+//    scanf("%d",&n);
+//    mytime.s=mytime.s+n;
+//    if(mytime.s>=60)
+//    {
+//        mytime.s=mytime.s-60;
+//        mytime.m++;
+//    }
+//    if(mytime.m>=60)
+//    {
+//        mytime.m=mytime.m-60;
+//        mytime.h++;
+//    }
+//    if(mytime.h>=24)
+//        mytime.h=mytime.h-24;
+//    printf("%d:%d:%d\n",mytime.h,mytime.m,mytime.s);
+//    return 0;
+//}
