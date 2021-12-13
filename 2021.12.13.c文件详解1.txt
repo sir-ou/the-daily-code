@@ -1,0 +1,181 @@
+//文件操作！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+ //文件分为程序文件 数据文件
+ //文件名：文件路径+文件名主干+文件后缀
+ //例如：c:\code\text.txt
+ //文件类型 数据文件分为 文本文件 二进制文件
+ //文本文件：以ASCII字符的形式存储的文件就是文本文件
+// 二进制文件：数据在内存中以二进制形式储存，不加转换直接输出到外存就是二进制文件
+//int main()
+//{
+//    int a=10000;
+//    FILE* pf=fopen("test.txt","wb");
+//    fwrite(&a,4,2,pf);//以二进制形式写入文件
+//    fclose(pf);
+//    pf=NULL;
+//    return 0;
+//}
+//1.文件到打开与关闭
+//int main()
+//{
+//    //打开test.txt文件
+//    //相对路径的写法
+//    //..表示上一级路径 .表示当前路径
+////    fopen("../test.txt","r");
+////    fopen("test.txt","r");
+//    //绝对路径的写法
+////    fopen("C:\\唯一代码\\test.pipimei520\\test.txt","r");
+//      FILE* pf=fopen("test.txt","w");
+//      if(pf==NULL)
+//      {
+//          //打开失败
+//          printf("%s\n",strerror(errno));
+//          return 0;
+//      }
+//      //打开成功
+//      //读文件
+//      //关闭文件
+//      fclose(pf);
+//      pf=NULL;
+//    return 0;
+//}
+//2.写文件 字符输出函数 fputc（字符，文件）函数
+//int main()
+//{
+//    FILE* pfw=fopen("test.txt","w");
+//    if(pfw==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    写文件
+//    fputc('o',pfw);
+//    fputc('u',pfw);
+//    fputc('x',pfw);
+//    fputc('u',pfw);
+//    fputc('n',pfw);
+//    关闭文件
+//    fclose(pfw);
+//    pfw=NULL;
+//    return 0;
+//}
+//3.读文件 字符输入函数 fgetc（文件）函数
+//int main()
+//{
+//    FILE* pfr=fopen("test.txt","r");
+//    if(pfr==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    //读文件 所以读的字符类型为int ->ASCII值
+//    printf("%c\n",fgetc(pfr));//o
+//    printf("%c\n",fgetc(pfr));//u
+//    printf("%c\n",fgetc(pfr));//x
+//    printf("%c\n",fgetc(pfr));//u
+//    printf("%c\n",fgetc(pfr));//n
+//    //关闭文件
+//    fclose(pfr);
+//    pfr=NULL;
+//    return 0;
+//}
+////4.读文件 文本行输入函数 fgets（数组，取多少个字符，文件）函数
+//int main()
+//{
+//    char buf[1024]={0};
+//    FILE* pf=fopen("test.txt","r");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    //读文件
+//    fgets(buf,1024,pf);//读取了ouxun\n 所以换行了
+//    //将pf指向的的文件读取到数组buf中，最多读取1024个字符
+//    printf("%s",buf);
+//    fgets(buf,1024,pf);
+//    printf("%s",buf);
+//    fclose(pf);
+//    pf==NULL;
+//    return 0;
+//}
+////5.写文件 文本行输出函数 fputs（字符串，文件）函数
+//int main()
+//{
+//    FILE* pf=fopen("test1.txt","w");
+//    if(pf==NULL)
+//    {
+//          printf("%s\n",strerror(errno));
+//          return 0;
+//    }
+//    //写文件
+//    fputs("cjl\n",pf);
+//    fputs("wan",pf);
+//    fclose(pf);
+//    pf==NULL;
+//    return 0;
+//}
+////6.写文件 格式化输出函数 fprintf（文件，printf）函数
+//struct S
+//{
+//    int n;
+//    float score;
+//    char arr[10];
+//};
+//int main()
+//{
+//    struct S s={100,3.14f,"bit"};
+//    FILE* pf=fopen("test2.txt","w");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+////    格式化形式写文件
+//    fprintf(pf,"%d %f %s",s.n,s.score,s.arr);
+//    fclose(pf);
+//    pf=NULL;
+//    return 0;
+//}
+////7.读文件 格式化输入函数 fscanf（文件，scanf）函数
+//struct S
+//{
+//    int n;
+//    float score;
+//    char arr[10];
+//};
+//int main()
+//{
+//    struct S s={0};
+//    FILE* pf=fopen("test2.txt","r");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    //格式化形式读文件
+//    fscanf(pf,"%d %f %s",&(s.n),&(s.score),s.arr);
+//    printf("%d %f %s\n",s.n,s.score,s.arr);
+//    fclose(pf);
+//    pf=NULL;
+//    return 0;
+//}
+////8.介绍一下sscanf（字符串，scanf） sprintf（字符串，printf）
+//struct S
+//{
+//    int n;
+//    float score;
+//    char arr[10];
+//};
+//int main()
+//{
+//    struct S s={100,3.14f,"bit"};
+//    struct S tmp={0};
+//    char buf[1024]={0};
+//    //把格式化的数据转化成字符串保存在buf中
+//    sprintf(buf,"%d %f %s",s.n,s.score,s.arr);
+//    printf("%s\n",buf);
+//    //从buf中读取格式化数据到tmp中
+//    sscanf(buf,"%d %f %s",&(tmp.n),&(tmp.score),tmp.arr);
+//    printf("%d %f %s",tmp.n,tmp.score,tmp.arr);
+//    return 0;
+//}
