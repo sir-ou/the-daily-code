@@ -1,0 +1,62 @@
+//// 数据的存储！！！！！！！！！！！！！！！
+// 1.数据类型介绍
+//标题1c语言类型 大致分为两类
+
+// 1.内置类型
+// char //字符型类型数据
+// short //短整型
+// int //整形
+// long //长整形
+// long long //更长的整形
+// float //单精度浮点数
+// double //双精度浮点数
+//2.自定义类型（构造类型）
+
+//类型的意义：1.使用这个类型开辟内存空间的大小（大小决定了空间使用范围） 2.如何看待内存空间的视角
+
+// c语言有没有字符串型类型？
+
+////标题2类型的基本分类
+//整形家族：
+//  char  //因为char在内存中以ASCII码值存储，是一个整数，所以归类为整形，只不过是有一个专业名字叫字符型而已
+//    unsigned char
+//    signed char
+//  short
+//    unsigned short [int]  //[]的意思是可以省略不写
+//    signed short [int]
+//  int 
+//    unsigned int
+//    signed int
+//  long
+//    unsigned long [int]
+//    signed long [int]
+//浮点型家族：
+//  float
+//  double
+//构造类型：
+// 数组类型
+// 结构体类型 struct
+// 枚举类型 enum
+// 联合类型 union
+// 
+// 指针类型：
+// int* pi；
+// char* pc；
+// float* pf；
+// void* pv；
+// 
+// 空类型：
+//  void 表示空类型（无类型） 
+
+
+// //调试知识（debug）！！！！！！！！！！！！！！！！！！<
+// int main()
+// {
+//     int i=0;
+//     for(i=0;i<100;i++)
+//     {
+//         printf("%d ",i);
+//     }
+//     system("pause");
+//     return 0;
+// }
