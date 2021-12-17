@@ -1,0 +1,86 @@
+//p321
+////t1
+//int main()
+//{
+//    int num=0,zm=0,other=0;
+//    char ch;
+//    FILE* pf=fopen("test.txt","r");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    while((ch=fgetc(pf))!=EOF)
+//    {
+//        if('a'<=ch&&ch<='w'||'A'<=ch&&ch<='W')
+//             zm++;
+//        else if('0'<=ch&&ch<='9')
+//             num++;
+//        else
+//            other++;
+//
+//    }
+//    fclose(pf);
+//    pf=NULL;
+//    printf("num=%d zm=%d other=%d\n",num,zm,other);
+//    return 0;
+//}
+////t2
+//int main()
+//{
+//    FILE* pf=fopen("test.txt","w");
+//     int n;
+//     scanf("%d",&n);
+//     while(n!=-1)
+//     {
+//         fprintf(pf,"%d",n);
+//         scanf("%d",&n);
+//     }
+//     if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//   fclose(pf);
+//   return 0;
+//}////问题h结构04
+// struct candidate
+//{
+//    char name[20];
+//    int poll;
+//};
+// struct str
+//{
+//    char s[20];
+//};
+//int main()
+//{
+//    int n,m,i,j;
+//    scanf("%d%d",&n,&m);
+//    struct candidate arr[n];
+//    struct str s1[m];
+//    getchar();
+//    for(i=0;i<n;i++)
+//    {
+//        gets(arr[i].name);
+//        arr[i].poll=0;
+//    }
+//    struct candidate max_arr=arr[0];
+//    for(j=0;j<m;j++)
+//        gets(s1[j].s);
+//    for(i=0;i<n;i++)
+//    {
+//        for(j=0;j<m;j++)
+//        {
+//            if(strcmp(s1[j].s,arr[i].name)==0)
+//                 arr[i].poll++;
+//        }
+//    }
+//    for(i=0;i<n;i++)
+//        if(arr[i].poll>max_arr.poll)
+//            max_arr.poll=arr[i].poll;
+//    for(i=0;i<n;i++)
+//        if(arr[i].poll==max_arr.poll)
+//            printf("%s\n",arr[i].name);
+//    return 0;
+//}
