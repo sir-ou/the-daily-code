@@ -1,0 +1,51 @@
+////t4
+//int main()
+//{
+//    FILE* pf=fopen("Int_Data.dat.txt","r+");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    int i=0,sum=0;
+//    while(!feof(pf))
+//    {
+//        sum+=i;
+//        fscanf(pf,"%d",&i);
+//    }
+//    fprintf(pf,"sum=%d\n",sum);
+//    fclose(pf);
+//    pf=NULL;
+//    return 0;
+//}
+////t5
+//int main()
+//{
+//    FILE* pf=fopen("test.txt","r");
+//    if(pf==NULL)
+//    {
+//        printf("%s\n",strerror(errno));
+//        return 0;
+//    }
+//    int i=0,j;
+//    char str[100],ch;
+//    while(!feof(pf))
+//    {
+//        while((ch=fgetc(pf))!='\n')
+//              {
+//                  str[i]=ch;
+//                  i++;
+//              }
+//              str[i]='\n';
+//        for(j=0;j<i-2;j++)
+//                if(str[j]=='f'&&str[j+1]=='o'&&str[j+2]=='r')
+//                {
+//                    puts(str);
+//                    break;
+//                }
+//        i=0;
+//    }
+//    fclose(pf);
+//    pf=NULL;
+//    return 0;
+//}
