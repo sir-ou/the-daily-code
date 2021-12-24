@@ -1,0 +1,106 @@
+////知识点4 数组参数 指针参数
+////1.一维数组传参
+//void test(int arr[])//ok?  ok
+//{}
+//void test(int arr[10])//ok?  ok
+//{}
+//void test(int* arr)//ok?   ok
+//{}
+//void test2(int* arr2[])//ok?  ok
+//{}
+//void test2(int** arr2)//ok?   ok arr2是首元素地址，是一级指针，一级指针用二级指针接收，完全可以
+//{}
+//int main()
+//{
+//    int arr[10]={0};
+//    int* arr2[10]={0};
+//    test(arr);
+//    test2(arr2);
+//    return 0;
+//}
+////2.二维数组传参
+//void test(int arr[3][5])//ok?  ok
+//{}
+//void test(int arr[][5])//ok?  ok  //只能省略行，不能省略列
+//{}
+//void test(int* arr)//ok?   no //二维数组名为首元素地址，首元素为第一行（一维数组）地址
+//{}
+//void test(int (*arr)[5])//ok?  ok
+//{}
+//int main()
+//{
+//    int arr[3][5]={0};
+//    test(arr);
+//    return 0;
+//}
+////3.一级指针传参
+////void test(int* p,int sz)
+////{}
+//int main()
+//{
+//    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+//    int* p=arr;
+//    int sz=sizeof(arr)/sizeof(arr[0]);
+//    test(p,sz);//一级指针p 传给参数
+//    return 0;
+//}
+////4.二级指针传参
+//void test(int** p)
+//{
+//    printf("%d\n",*(p[0]));
+//}
+//int main()
+//{
+//    int n=10;
+////    int* p=&n;
+////    int** pp=&p;
+//    int* arr[1]={&n};
+////    test(pp);
+////    test(&p);
+//    test(arr);//ok
+//    return 0;
+//}
+
+//知识点5 函数指针
+//数组指针 - 指向数组的指针
+//函数指针 - 指向函数的指针
+//例1
+//int add(int x,int y)
+//{
+//    int z=x+y;
+//    return z;
+//}
+//int main()
+//{
+//    int a=10;
+//    int b=20;
+//    add(a,b);
+//    //&arr
+//    //arr
+//    //&函数名 和 函数名 都是函数的地址
+//    printf("%p\n",&add);
+//    printf("%p\n",add);
+//    //我的函数指针改怎么写呢？
+//    int (*pa)(int,int)=add; //返回值类型 （*指针变量名字）（参数类型）
+//    printf("%d \n",(*pa)(a,b));
+////    printf("%d \n",add(a,b));
+//    return 0;
+//}
+//例2
+//void test(char* str)
+//{
+//    printf("%s\n",str);
+//}
+//int main()
+//{
+//    void (*p)(char*)=test;
+//    (*p)("hello bit");
+//     p("hello bit");
+//    return 0;
+//}
+//例3
+//代码1    (*(void (*)())0)() 
+//把0强制类型转换为：void （*）（）函数指针类型 - 0就是一个函数的地址
+//调用0地址处的函数
+//代码2     void(*signal(int , void(*)(int)))(int)
+//signal是一个函数 其返回类型是一个void （*）（int）的函数指针
