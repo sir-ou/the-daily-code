@@ -1,0 +1,137 @@
+//如何修改bub_sort 冒泡排序函数，使他可以对任意类型数据排序呢？
+//实现bub_sort函数的程序员，他不知道未来要排序的数据类型
+//所以程序员也不知道，待比较的两个元素的数据类型
+//
+//void bub_sort(void* base,int sz,int width,int (*cmp)(void* e1,void* e2))
+//{
+//    int i=0;
+//    //趟数
+//    for(i=0;i<sz-1;i++)
+//    {
+//        int j=0;
+//        //每一趟
+//        for(j=0;j<sz-i-1;j++)
+//        {
+//            //两个数的比较
+//            if(cmp((char*)base+j*width,(char*)base+(1+j)*width)>0)
+//            {
+//                //如果升序排列 交换数值
+//                swap((char*)base+j*width,(char*)base+(1+j)*width,width);
+//            }
+//        }
+//    }
+//}
+//void swap(char* buf1,char* buf2,int width)
+//{
+//    int i=0;
+//    for(i=0;i<width;i++)
+//    {
+//        char tmp=*buf1;
+//        *buf1=*buf2;
+//        *buf2=tmp;
+//          buf1++;
+//          buf2++;
+//    }
+//}
+//int sort_int(const void* e1,const void* e2)
+//{
+//      return *(int*)e1 - *(int*)e2;
+//}
+//struct stu
+//{
+//    char name[20];
+//    int age;
+//};
+//int sort_stu_by_age(const void* e1,const void* e2)
+//{
+//   return ((struct stu*)e1)->age - ((struct stu*)e2)->age;
+//}
+//int sort_stu_by_name(const void* e1,const void* e2)
+//{
+//    return strcmp(((struct stu*)e1)->name,((struct stu*)e2)->name);
+//}
+//void test4()
+//{
+//    int arr[10]={11,1,9,4,5,6,7,8,2,10};
+//    int sz=sizeof(arr)/sizeof(arr[0]);
+//    //使用bub_sort的程序员一定知道自己排序的是什么数据
+//    //就应该知道如何比较待排序数组中的元素
+//    bub_sort(arr,sz,sizeof(arr[0]),sort_int);
+//    int i=0;
+//    for(i=0;i<sz;i++)
+//           printf("%d ",arr[i]);
+//    printf("\n");
+//}
+//void test5()
+//{
+//    struct stu s[3]={ {"bhangsan",20}, {"aaaa",10}, {"aaaaang",30} };
+//    int sz=sizeof(s)/sizeof(s[0]);
+//    //用年龄age进行比较
+//    bub_sort(s,sz,sizeof(s[0]),sort_stu_by_age);
+//    int i=0;
+//    for(i=0;i<sz;i++)
+//        {
+//            printf("%s ",s[i].name);
+//            printf("%d\n",s[i].age);
+//        }
+//    //用名字name进行比较
+//    bub_sort(s,sz,sizeof(s[0]),sort_stu_by_name);
+//    for(i=0;i<sz;i++)
+//        {
+//            printf("%s ",s[i].name);
+//            printf("%d\n",s[i].age);
+//        }
+//}
+//int main()
+//{
+//    //给整形数组排序
+//    test4();
+//    //给结构类型数组排序
+//    test5();
+//    return 0;
+//}
+
+//指针和数组笔试题解析
+
+////1.一维数组
+//int main()
+//{
+//    //正常情况下 数组名就是首元素地址
+//    //但是有两个例外
+//    //1.sizeof（数组名） - 数组名表示整个数组
+//    //2.&数组名 - 数组名表示整个数组
+//
+//    //整形数组
+//    int a[]={1,2,3,4};
+//    printf("%d\n",sizeof(a));//16 - sizeof(数组名) - 计算的是数组的大小 - 单位字节
+//    printf("%d\n",sizeof(a+0));//8 - 这里数组名表示首元素地址
+//    printf("%d\n",sizeof(*a));//4 - 这里数组名表示首元素地址
+//    printf("%d\n",sizeof(a+1));//8 - 这里数组名表示首元素地址
+//    printf("%d\n",sizeof(a[1]));//4 - 第二个元素大小
+//    printf("%d\n",sizeof(&a));//8 - &a取出了数组的地址，但是地址也就是4或者8个字节
+//    printf("%d\n",sizeof(*&a));//16 - &a取出了数组地址 - *访问整个数组
+//    printf("%d\n",sizeof(&a+1));//8 - &a取出了数组地址 - &a+1跳过了整个数组 - 但是还是一个地址
+//    printf("%d\n",sizeof(&a[0]));//8 - 取出第一个元素地址
+//    printf("%d\n",sizeof(&a[0]+1));//8 - 第二个元素地址
+//    printf("\n");
+//    //字符数组
+//    char arr[]={'a','b','c','d','e','f'};
+//    printf("%d\n",sizeof(arr));//6
+//    printf("%d\n",sizeof(arr+0));//8
+//    printf("%d\n",sizeof(*arr));//1
+//    printf("%d\n",sizeof(arr[1]));//1
+//    printf("%d\n",sizeof(&arr));//8
+//    printf("%d\n",sizeof(&arr+1));//8
+//    printf("%d\n",sizeof(&arr[0]+1));//8
+//    printf("\n");
+//
+//    //strlen - 计算字符串长度函数 - 关键在于找到\0
+//    printf("%d\n",strlen(arr));//随机值
+//    printf("%d\n",strlen(arr+0));//随机值
+////    printf("%d\n",strlen(*arr));// err啥也不打印 - strlen(地址) - *arr是首元素 ‘ a’ - ascll码值97 ，把97当做一个地址访问 - 非法访问 - 编译器会崩溃
+////    printf("%d\n",strlen(arr[1]));//同上
+//    printf("%d\n",strlen(&arr));//随机值
+//    printf("%d\n",strlen(&arr+1));//随机值
+//    printf("%d\n",strlen(&arr[0]+1));//随机值
+//    return 0;
+//}
