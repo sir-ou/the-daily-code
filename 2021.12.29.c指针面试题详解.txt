@@ -1,0 +1,57 @@
+//      char ch[]="abcdef";
+//      printf("%d\n",sizeof(ch));//7 - sizeof(arr) - 计算的是数组的大小 - 单位字节
+//      printf("%d\n",sizeof(ch+0));//8 - 计算地址的大小
+//      printf("%d\n",sizeof(*ch));//1 - *ch是首元素
+//      printf("%d\n",sizeof(ch[1]));//1 同上
+//      printf("%d\n",sizeof(&ch));//8 - 数组的地址
+//      printf("%d\n",sizeof(&ch+1));//8 - 计算地址
+//      printf("%d\n",sizeof(&ch[0]+1));//8 - 同上
+//      printf("\n");
+//
+//      printf("%d\n",strlen(ch));//6
+//      printf("%d\n",strlen(ch+0));//6
+//      printf("%d\n",strlen(*ch));//err - 编译器崩溃
+//      printf("%d\n",strlen(ch[1]));//err - 编译器崩溃
+//      printf("%d\n",strlen(&ch));//6
+//      printf("%d\n",strlen(&ch+1));//随机值
+//      printf("%d\n",strlen(&ch[0]+1));//5
+//      printf("\n");
+//
+//      char* p="abcdef";  //将常量字符串abcdef首元素的地址存放到p中
+//      printf("%d\n",sizeof(p));//8
+//      printf("%d\n",sizeof(p+0));//8
+//      printf("%d\n",sizeof(*p));//1
+//      printf("%d\n",sizeof(p[1]));//1
+//      printf("%d\n",sizeof(&p));//8
+//      printf("%d\n",sizeof(&p+1));//8
+//      printf("%d\n",sizeof(&p[0]+1));//8
+//      printf("\n");
+//
+//      printf("%d\n",strlen(p));//6
+//      printf("%d\n",strlen(p+1));//5
+////      printf("%d\n",strlen(*p));//err
+////      printf("%d\n",strlen(p[1]));//err
+//      printf("%d\n",strlen(&p));//随机值
+//      printf("%d\n",strlen(&p+1));//随机值
+//      printf("%d\n",strlen(&p[0]+1));//随机值
+//      printf("\n");
+//    return 0;
+//}
+
+////2.二维数组
+//int main()
+//{
+//    int a[3][4]={0};
+//    printf("%d\n",sizeof(a));//48
+//    printf("%d\n",sizeof(a[0][0]));//4
+//    printf("%d\n",sizeof(a[0]));//16 - a[0]相当于第一行数组名 - 计算的是第一行的数组大小
+//    printf("%d\n",sizeof(a[0]+1));//8 - 此时a[0]表示第一行首元素地址 - 加1表示第一行第二个元素地址
+//    printf("%d\n",sizeof(*(a[0]+1)));//4
+//    printf("%d\n",sizeof(a+1));//8 - a是首元素地址 - 二维数组首元素是第一行 - a+1是第二行的地址
+//    printf("%d\n",sizeof(*(a+1)));//16 - a+1是第二行的地址 - *找到第二行
+//    printf("%d\n",sizeof(&a[0]+1));//8 -
+//    printf("%d\n",sizeof(*(&a[0]+1)));//16
+//    printf("%d\n",sizeof(*a));//16
+//    printf("%d\n",sizeof(a[3]));//16
+//    return 0;
+//}
