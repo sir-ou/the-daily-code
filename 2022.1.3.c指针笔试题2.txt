@@ -1,0 +1,20 @@
+//题2
+//struct Test
+//{
+//    int Num;
+//    char* pcName;
+//    short sDate;
+//    char cha[2];
+//    short sBa[4];
+//}*p;
+////假设p的值为0x100000。如下表达式的值分别为多少？
+////已知结构体Test类型变量的大小为20字节
+//int main()
+//{
+//    printf("%d\n",sizeof(struct Test));
+//    p=(struct Test*)0x100000;
+//    printf("%p\n",p+0x1);//0000000100000020
+//    printf("%p\n",(unsigned long)p+0x1);//00000010000001
+//    printf("%p\n",(unsigned int*)p+0x1);//00000010000004
+//    return 0;
+//}
