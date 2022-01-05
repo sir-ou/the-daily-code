@@ -1,0 +1,46 @@
+//1.求整数均值
+//int main()
+//{
+//    int a,b,c,d;
+//    scanf("%d%d%d%d",&a,&b,&c,&d);
+//    int sum = a+b+c+d;
+//    double average=sum/4.0;
+//    printf("sum=%d average=%.1lf",sum,average);
+//    return 0;
+//}
+//3.序列求和
+//int main()
+//{
+//    int m,n,i;
+//    double sum=0;
+//    scanf("%d%d",&m,&n);//0<m<=n
+//    if(m==0)
+//        printf("非法输入m范围！");
+//    else
+//      for(i=m;i<=n;i++)
+//         sum+=(pow(i,2)+1.0/i);
+//    printf("sum=%.6lf",sum);
+//    return 0;
+//}
+//4.求交错序列前n项的和
+//int main()
+//{
+//    int i,n;
+//    float sum=0;
+//    scanf("%d",&n);
+//    for(i=1;i<=n;i++)
+//        sum+=pow(-1,i+1)*(i/(2*i-1.0));
+//    printf("sum=%f",sum);
+//    return 0;
+//}
+//5.平方根求和（1+根号2+根号3...）
+//int main()
+//{
+//    int n,i;
+//    double sum = 0;
+//    scanf("%d",&n);
+//    for(i=1;i<=n;i++)
+//        sum+=sqrt(i);
+//    printf("sum=%lf",sum);
+//    return 0;
+//}
